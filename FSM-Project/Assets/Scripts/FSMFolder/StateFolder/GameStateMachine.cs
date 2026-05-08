@@ -1,5 +1,6 @@
 ﻿using FSMFolder.Entity;
 using FSMFolder.StateBaseFolder;
+using UnityEngine.InputSystem;
 
 namespace FSMFolder.StateFolder
 {
@@ -7,7 +8,7 @@ namespace FSMFolder.StateFolder
     {
         public GameContext Context { get; private set; }
 
-        public GameStateMachine()
+        public GameStateMachine(InputAction inputAction)
         {
             Context = new GameContext();
             // 初始状态

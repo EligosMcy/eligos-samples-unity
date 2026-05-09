@@ -1,4 +1,5 @@
-﻿using FSMFolder.StateBaseFolder;
+﻿using FSMFolder.Entity;
+using FSMFolder.StateBaseFolder;
 using UnityEngine;
 
 namespace FSMFolder.GameStateFolder
@@ -8,6 +9,8 @@ namespace FSMFolder.GameStateFolder
     {
         public override void Enter()
         {
+            stateMachine.Context.GameStateType = GameStateType.Menu;
+
             Debug.Log("进入菜单状态");
             // UIManager.Instance.ShowMenu();
         }

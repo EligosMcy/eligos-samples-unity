@@ -1,4 +1,6 @@
-﻿using FSMFolder.StateBaseFolder;
+﻿using FSMFolder.Entity;
+using FSMFolder.PlayerStateFolder;
+using FSMFolder.StateBaseFolder;
 using UnityEngine;
 
 namespace FSMFolder.GameStateFolder
@@ -6,18 +8,26 @@ namespace FSMFolder.GameStateFolder
     // 暂停状态
     public class PausedState : State<GameStateMachine>
     {
+        private float _pausedTime;
+        private float _pausedLoadTime = 0.5f;
+
         public override void Enter()
         {
-            Debug.Log("进入暂停状态");
             Time.timeScale = 0;
             stateMachine.Context.IsPaused = true;
+            stateMachine.Context.GameStateType = GameStateType.Paused;
+
+            Debug.Log("进入暂停状态");
         }
 
         public override void Update()
         {
-            if (stateMachine.Context.PausedInputAction.IsPressed())
+            _pausedTime += Time.deltaTime;
+
+            if (_pausedTime > _pausedLoadTime)
             {
                 stateMachine.ChangeState<PlayingState>();
+                _pausedTime = 0;
             }
         }
 

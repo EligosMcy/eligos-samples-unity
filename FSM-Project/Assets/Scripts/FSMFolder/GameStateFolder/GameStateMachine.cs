@@ -10,7 +10,7 @@ namespace FSMFolder.GameStateFolder
 
         public GameStateMachine(InputActionAsset inputActionAsset)
         {
-            InputActionMap inputActionMap = inputActionAsset.FindActionMap("FSM");
+            InputActionMap inputActionMap = inputActionAsset.FindActionMap("Game");
 
             InputAction playInputAction = inputActionMap.FindAction("PlayAction");
             InputAction pausedInputAction = inputActionMap.FindAction("PausedAction");

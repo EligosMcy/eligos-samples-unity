@@ -1,4 +1,5 @@
-﻿using FSMFolder.StateBaseFolder;
+﻿using FSMFolder.Entity;
+using FSMFolder.StateBaseFolder;
 using UnityEngine;
 
 namespace FSMFolder.GameStateFolder
@@ -8,8 +9,11 @@ namespace FSMFolder.GameStateFolder
     {
         public override void Enter()
         {
+            stateMachine.Context.GameStateType = GameStateType.Playing;
+
             Debug.Log("进入游戏状态");
-            // GameManager.Instance.StartGame();
+
+            PlayManager.Instance.StartPlay();
         }
 
         public override void Update()
@@ -33,11 +37,12 @@ namespace FSMFolder.GameStateFolder
 
         public override void FixedUpdate()
         {
-            // GameManager.Instance.UpdateGame();
+            // PlayManager.Instance.UpdateGame();
         }
 
         public override void Exit()
         {
+            PlayManager.Instance.StopPlay();
             Debug.Log("退出游戏状态");
         }
     }

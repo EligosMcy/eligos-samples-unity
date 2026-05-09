@@ -1,5 +1,5 @@
 ﻿using System;
-using FSMFolder.PlayerStateFolder;
+using FSMFolder.GameStateFolder;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,24 +9,25 @@ namespace FSMFolder
     {
         public static GameManager Instance;
 
-        private PlayStateMachine _playStateMachine;
+        [SerializeField] 
+        private InputActionAsset _inputActionAsset;
 
-        [SerializeField] private InputActionAsset _inputActionAsset;
+        private GameStateMachine _gameStateMachine;
 
         private void Awake()
         {
             Instance = this;
-            _playStateMachine = new PlayStateMachine(_inputActionAsset);
+            _gameStateMachine = new GameStateMachine(_inputActionAsset);
         }
 
         private void Update()
         {
-            _playStateMachine.Update();
+            _gameStateMachine.Update();
         }
 
         private void FixedUpdate()
         {
-            _playStateMachine.FixedUpdate();
+            _gameStateMachine.FixedUpdate();
         }
     }
 }

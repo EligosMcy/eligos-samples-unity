@@ -1,4 +1,5 @@
-﻿using FSMFolder.StateBaseFolder;
+﻿using FSMFolder.Entity;
+using FSMFolder.StateBaseFolder;
 using UnityEngine;
 
 namespace FSMFolder.GameStateFolder
@@ -8,10 +9,10 @@ namespace FSMFolder.GameStateFolder
     {
         public override void Enter()
         {
-            stateMachine.Context.Score++;
-            stateMachine.Context.Lives = 100;
-            int score = stateMachine.Context.Score;
-            int lives = stateMachine.Context.Lives;
+            int score = ++stateMachine.Context.Score;
+            int lives = stateMachine.Context.Lives = 100;
+
+            stateMachine.Context.GameStateType = GameStateType.GameOver;
 
             Debug.Log($"进入游戏结束状态: {score} , {lives}");
 

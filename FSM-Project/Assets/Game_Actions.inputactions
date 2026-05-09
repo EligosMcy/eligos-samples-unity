@@ -3,7 +3,7 @@
     "name": "Game_Actions",
     "maps": [
         {
-            "name": "FSM",
+            "name": "Game",
             "id": "9016f2ab-402d-464b-9502-29ddb94b355d",
             "actions": [
                 {

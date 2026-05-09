@@ -21,8 +21,6 @@ namespace FSMFolder.PlayerStateFolder
 
             InputAction restartPlayInputAction = inputActionMap.FindAction("RestartPlayInputAction");
 
-            inputActionMap.Enable();
-
             Context = new PlayContext()
             {
                 AttackCount = 0,

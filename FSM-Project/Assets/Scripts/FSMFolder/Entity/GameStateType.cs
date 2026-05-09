@@ -8,4 +8,14 @@ namespace FSMFolder.Entity
         Paused,
         GameOver
     }
+
+
+    // 玩家状态枚举
+    public enum PlayStateType
+    {
+        Idle,
+        Move,
+        Attack,
+        Die
+    }
 }

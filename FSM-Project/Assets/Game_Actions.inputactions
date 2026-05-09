@@ -1,0 +1,227 @@
+{
+    "version": 1,
+    "name": "Game_Actions",
+    "maps": [
+        {
+            "name": "FSM",
+            "id": "9016f2ab-402d-464b-9502-29ddb94b355d",
+            "actions": [
+                {
+                    "name": "PlayAction",
+                    "type": "Button",
+                    "id": "491743b5-6766-48e5-a794-4c332d1cd2c6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PausedAction",
+                    "type": "Button",
+                    "id": "43a9ae4a-a5cc-4556-891c-966f5f83ae33",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DeductLivesAction",
+                    "type": "Button",
+                    "id": "3e692bb8-51d2-4cf2-99bc-61277bda853f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RestartGameAction",
+                    "type": "Button",
+                    "id": "191524f7-ae0e-4aff-93ca-196ab4e9bcc6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2dacca6c-f4a0-4ad8-b1e7-b3b4d0dfd877",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43fb4f0f-f28c-453d-bb47-fc68980efdc4",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PausedAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b588da7-df8d-43e5-9978-d0769a3dac88",
+                    "path": "<Keyboard>/delete",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DeductLivesAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1dcc2765-0bf5-4ef4-a710-ae00adc80057",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RestartGameAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Play",
+            "id": "7a7c9557-608e-41b6-a4ee-34e87bee3932",
+            "actions": [
+                {
+                    "name": "MoveInputAction",
+                    "type": "Value",
+                    "id": "2a9fa5bd-becb-4834-9bfd-b7ee1081db7d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "AttackInputAction",
+                    "type": "Button",
+                    "id": "a0e8d829-2919-4196-b618-073e0e7c922f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DeductHpInputAction",
+                    "type": "Button",
+                    "id": "d96916ef-e2e4-49a0-9b99-58e32e90ad5f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RestartPlayInputAction",
+                    "type": "Button",
+                    "id": "be3970c0-cb2c-4b68-9546-03aa19a1ee7e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "ea9ddfa3-310c-43cd-95bf-be5750209e16",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveInputAction",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "f4754a8f-5d1c-402e-8857-8262e5c5b62c",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveInputAction",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "b92a5bd2-1160-45be-96d1-ced5188c3c2e",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveInputAction",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "64616e38-2746-414e-ad29-b792c4ed92d4",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveInputAction",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "5b3754b9-4d01-4f2e-8ae7-09b93f4a4173",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveInputAction",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2ea73d4b-33ac-4f69-99f9-892fe31fd5df",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AttackInputAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c531d784-a321-4713-96e7-5eda586b8ae0",
+                    "path": "<Keyboard>/numpad2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DeductHpInputAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8bc3ce6-ec26-42c2-9270-d7e51feba2e4",
+                    "path": "<Keyboard>/numpadEnter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RestartPlayInputAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

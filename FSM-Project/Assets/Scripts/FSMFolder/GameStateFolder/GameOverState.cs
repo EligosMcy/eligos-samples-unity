@@ -1,20 +1,26 @@
 ﻿using FSMFolder.StateBaseFolder;
 using UnityEngine;
 
-namespace FSMFolder.StateFolder
+namespace FSMFolder.GameStateFolder
 {
     // 游戏结束状态
     public class GameOverState : State<GameStateMachine>
     {
         public override void Enter()
         {
-            Debug.Log("进入游戏结束状态");
+            stateMachine.Context.Score++;
+            stateMachine.Context.Lives = 100;
+            int score = stateMachine.Context.Score;
+            int lives = stateMachine.Context.Lives;
+
+            Debug.Log($"进入游戏结束状态: {score} , {lives}");
+
             // UIManager.Instance.ShowGameOver();
         }
 
         public override void Update()
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (stateMachine.Context.RestartGameAction.IsPressed())
             {
                 stateMachine.ChangeState<MenuState>();
             }

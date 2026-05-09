@@ -1,8 +1,7 @@
 ﻿using FSMFolder.StateBaseFolder;
-using UnityEditor;
 using UnityEngine;
 
-namespace FSMFolder.StateFolder
+namespace FSMFolder.GameStateFolder
 {
     // 游戏进行状态
     public class PlayingState : State<GameStateMachine>
@@ -15,12 +14,18 @@ namespace FSMFolder.StateFolder
 
         public override void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (stateMachine.Context.PausedInputAction.IsPressed())
             {
                 stateMachine.ChangeState<PausedState>();
             }
 
-            if (stateMachine.Context.lives <= 0)
+            if (stateMachine.Context.DeductLivesAction.triggered)
+            {
+                stateMachine.Context.Lives -= 10;
+                Debug.Log($"扣除生命： {stateMachine.Context.Lives}");
+            }
+
+            if (stateMachine.Context.Lives <= 0)
             {
                 stateMachine.ChangeState<GameOverState>();
             }

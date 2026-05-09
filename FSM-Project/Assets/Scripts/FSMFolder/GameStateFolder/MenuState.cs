@@ -1,8 +1,7 @@
 ﻿using FSMFolder.StateBaseFolder;
 using UnityEngine;
-using FSMFolder.Entity;
 
-namespace FSMFolder.StateFolder
+namespace FSMFolder.GameStateFolder
 {
     // 菜单状态
     public class MenuState : State<GameStateMachine>
@@ -15,7 +14,7 @@ namespace FSMFolder.StateFolder
 
         public override void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (stateMachine.Context.PlayInputAction.IsPressed())
             {
                 stateMachine.ChangeState<PlayingState>();
             }

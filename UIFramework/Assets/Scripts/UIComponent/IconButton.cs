@@ -69,51 +69,52 @@ namespace UIComponent
             _button.onClick.RemoveListener(OnButtonClick);
         }
     }
-
-#if UNITY_EDITOR
-    [CustomEditor(typeof(IconButton))]
-    public class IconButtonEditor : Editor
-    {
-        public override void OnInspectorGUI()
+    /*
+    #if UNITY_EDITOR
+        [CustomEditor(typeof(IconButton))]
+        public class IconButtonEditor : Editor
         {
-            DrawDefaultInspector();
-
-            IconButton iconButton = (IconButton)target;
-
-            GUILayout.Space(20);
-
-            if (GUILayout.Button("Apply ImageSprite and IconText"))
+            public override void OnInspectorGUI()
             {
-                ApplySpriteAndText(iconButton);
+                DrawDefaultInspector();
+
+                IconButton iconButton = (IconButton)target;
+
+                GUILayout.Space(20);
+
+                if (GUILayout.Button("Apply ImageSprite and IconText"))
+                {
+                    ApplySpriteAndText(iconButton);
+                }
+            }
+
+            private void ApplySpriteAndText(IconButton iconButton)
+            {
+                SerializedObject serializedObject = new SerializedObject(iconButton);
+
+                SerializedProperty imageSpriteProp = serializedObject.FindProperty("_imageSprite");
+                SerializedProperty iconTextProp = serializedObject.FindProperty("_iconText");
+                SerializedProperty unRaycastImageProp = serializedObject.FindProperty("_unRaycastImage");
+                SerializedProperty textMeshProProp = serializedObject.FindProperty("_textMeshProUGUI");
+
+                if (unRaycastImageProp.objectReferenceValue != null)
+                {
+                    var unRaycastImage = (CustomUnRaycastImage)unRaycastImageProp.objectReferenceValue;
+                    unRaycastImage.sprite = (Sprite)imageSpriteProp.objectReferenceValue;
+                }
+
+                if (textMeshProProp.objectReferenceValue != null)
+                {
+                    var textMeshPro = (TMPro.TextMeshProUGUI)textMeshProProp.objectReferenceValue;
+                    textMeshPro.text = iconTextProp.stringValue;
+                }
+
+                EditorUtility.SetDirty(iconButton);
+                serializedObject.ApplyModifiedProperties();
+
+                Debug.Log("Applied imageSprite and iconText to components");
             }
         }
-
-        private void ApplySpriteAndText(IconButton iconButton)
-        {
-            SerializedObject serializedObject = new SerializedObject(iconButton);
-            
-            SerializedProperty imageSpriteProp = serializedObject.FindProperty("_imageSprite");
-            SerializedProperty iconTextProp = serializedObject.FindProperty("_iconText");
-            SerializedProperty unRaycastImageProp = serializedObject.FindProperty("_unRaycastImage");
-            SerializedProperty textMeshProProp = serializedObject.FindProperty("_textMeshProUGUI");
-
-            if (unRaycastImageProp.objectReferenceValue != null)
-            {
-                var unRaycastImage = (CustomUnRaycastImage)unRaycastImageProp.objectReferenceValue;
-                unRaycastImage.sprite = (Sprite)imageSpriteProp.objectReferenceValue;
-            }
-
-            if (textMeshProProp.objectReferenceValue != null)
-            {
-                var textMeshPro = (TMPro.TextMeshProUGUI)textMeshProProp.objectReferenceValue;
-                textMeshPro.text = iconTextProp.stringValue;
-            }
-
-            EditorUtility.SetDirty(iconButton);
-            serializedObject.ApplyModifiedProperties();
-            
-            Debug.Log("Applied imageSprite and iconText to components");
-        }
-    }
-#endif
+    #endif
+    */
 }

@@ -64,6 +64,7 @@ MonoBehaviour:
   _iconText: "\u4EFB\u52A1"
   _unRaycastImage: {fileID: 3972635328043312861}
   _textMeshProUGUI: {fileID: 2008965370561720496}
+  _button: {fileID: 8584100776348263676}
 --- !u!114 &3978359632192525931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +135,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 3972635328043312861}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIFramework.UIComponent.CustomUnRaycastImage
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

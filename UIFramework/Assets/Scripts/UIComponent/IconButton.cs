@@ -25,12 +25,16 @@ namespace UIComponent
         [SerializeField]
         private TextMeshProUGUI _textMeshProUGUI;
 
+        [SerializeField]
         private Button _button;
 
         private void Awake()
         {
             initComponent();
+        }
 
+        private void Start()
+        {
             _unRaycastImage.sprite = _imageSprite;
 
             _textMeshProUGUI.text = _iconText;

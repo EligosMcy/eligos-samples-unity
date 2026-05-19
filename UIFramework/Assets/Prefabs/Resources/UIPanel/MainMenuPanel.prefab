@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 649880692045994161}
   - component: {fileID: 6800487872238098558}
   m_Layer: 5
-  m_Name: CharacterBg
+  m_Name: PanelBg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 7046422694438119824}
   - component: {fileID: 5875039435246512351}
   m_Layer: 5
-  m_Name: CharacterImage
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
